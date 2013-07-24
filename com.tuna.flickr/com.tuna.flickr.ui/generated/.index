@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<repository increment='1374567433604' name='com.tuna.flickr.ui' xmlns='http://www.osgi.org/xmlns/repository/v1.0.0'>
+  <resource>
+    <capability namespace='osgi.identity'>
+      <attribute name='osgi.identity' value='com.tuna.flickr.ui'/>
+      <attribute name='type' value='osgi.bundle'/>
+      <attribute name='version' type='Version' value='0.0.0'/>
+    </capability>
+    <capability namespace='osgi.content'>
+      <attribute name='osgi.content' value='ca6adb96ed647b8303eebac2b2e4625d1ba929e308daae613aa32a6a665ae563'/>
+      <attribute name='url' value='generated/com.tuna.flickr.ui.jar'/>
+      <attribute name='size' type='Long' value='330'/>
+      <attribute name='mime' value='application/vnd.osgi.bundle'/>
+    </capability>
+    <capability namespace='osgi.wiring.bundle'>
+      <attribute name='osgi.wiring.bundle' value='com.tuna.flickr.ui'/>
+      <attribute name='bundle-version' type='Version' value='0.0.0'/>
+    </capability>
+    <capability namespace='osgi.wiring.host'>
+      <attribute name='osgi.wiring.host' value='com.tuna.flickr.ui'/>
+      <attribute name='bundle-version' type='Version' value='0.0.0'/>
+    </capability>
+    <capability namespace='bndtools.workspace'>
+      <attribute name='bndtools.workspace' value='file:/C:/BUSINESS/WORKSPACE/RCP'/>
+      <attribute name='project.path' value='/com.tuna.flickr.ui'/>
+    </capability>
+  </resource>
+</repository>

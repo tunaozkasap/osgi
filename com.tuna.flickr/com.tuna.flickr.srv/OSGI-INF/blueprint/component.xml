@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+	
+	<bean id="flickrService" class="com.tuna.flickr.srv.DefaultFlickrService"/>
+	<bean id="configurationPoint" class="com.tuna.flickr.srv.ConfigurationPoint">
+	    <property name="flickrService" ref="flickrService"/>
+	</bean>
+	
+	
+	<service ref="configurationPoint" activation="eager" auto-export="interfaces">
+	    <service-properties>
+	        <entry key="service.pid" value="com.tuna.flickr.srv"/>
+	    </service-properties>
+	</service>
+	<service ref="flickrService" activation="eager" auto-export="interfaces"/>
+	
+</blueprint>

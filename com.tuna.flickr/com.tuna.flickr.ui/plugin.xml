@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run class="com.tuna.flickr.ui.intro.Application">
+         </run>
+      </application>
+   </extension>
+   
+   <!-- PERSPECTIVE -->
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="com.tuna.flickr.ui.intro.Perspective"
+            id="com.tuna.flickr.ui.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension targetID="*">
+         <view standalone="true"
+               minimized="false"
+               relative="org.eclipse.ui.editorss"
+               relationship="left"
+               id="com.tuna.flickr.ui.view.navigation">
+         </view>
+         <view standalone="true"
+               minimized="false"
+               relative="com.tuna.flickr.ui.view.navigation"
+               relationship="left"
+               id="com.tuna.flickr.ui.view.console">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <!-- PERSPECTIVE -->
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="com.tuna.flickr.ui.application"
+            name="RCP Product">
+         <property
+               name="windowImages"
+               value="icons/alt_window_16.gif,icons/alt_window_32.gif">
+         </property>
+         <property
+               name="appName"
+               value="RCP Product">
+         </property>
+      </product>
+   </extension>
+   <extension point="org.eclipse.ui.views">
+      <view
+            class="com.tuna.flickr.ui.intro.NavigationView"
+            id="com.tuna.flickr.ui.view.navigation"
+            name="com.tuna.flickr.ui.view.navigation"
+            restorable="true">
+      </view>
+      <view
+            class="com.tuna.flickr.ui.intro.ConsoleView"
+            id="com.tuna.flickr.ui.view.console"
+            name="com.tuna.flickr.ui.view.console"
+            restorable="true">
+      </view>
+   </extension>
+</plugin>

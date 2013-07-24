@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+	
+	<bean id="flickrServiceTest" class="com.tuna.flickr.ui.service.ServiceLocator">
+	   <property name="flickrService" ref="flickrService"/>
+	</bean>
+	
+	<reference id="flickrService" interface="com.tuna.flickr.srv.api.IFlickrService"/>	
+</blueprint>
