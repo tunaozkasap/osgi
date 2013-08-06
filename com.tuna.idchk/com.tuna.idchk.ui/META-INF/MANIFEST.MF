@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ID Checker UI
+Bundle-SymbolicName: com.tuna.idchk.ui;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: TUNA
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.ui,
+ org.eclipse.osgi.services
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Import-Package: com.tuna.essence.exception.api,
+ com.tuna.idchk.db.api,
+ com.tuna.idchk.feed.api

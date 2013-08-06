@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ID Checker DB Module
+Bundle-SymbolicName: com.tuna.idchk.db
+Bundle-Version: 1.0.0.SNAPSHOT
+Bundle-Vendor: TUNA
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Service-Component: OSGI-INF/*.xml
+Import-Package: com.tuna.essence.exception.api,
+ org.osgi.framework;version="1.3.0",
+ org.osgi.service.event;version="1.2.0"
+Require-Bundle: org.hsqldb.hsqldb;bundle-version="2.3.0"
+Export-Package: com.tuna.idchk.db.api

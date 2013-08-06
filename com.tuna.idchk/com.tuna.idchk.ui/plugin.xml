@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="com.tuna.idchk.ui.application"
+         point="org.eclipse.core.runtime.applications">
+      <application
+            cardinality="singleton-scoped"
+            visible="true">
+         <run
+               class="com.tuna.idchk.ui.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="com.tuna.idchk.ui.SearchPerspective"
+            icon="icons/search.gif"
+            id="com.tuna.idchk.ui.perspective.search"
+            name="Search Perspective">
+      </perspective>
+      <perspective
+            class="com.tuna.idchk.ui.FeedPerspective"
+            icon="icons/feed.gif"
+            id="com.tuna.idchk.ui.feedPerspective"
+            name="Feed Perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            name="Feed List View"
+            class="com.tuna.idchk.ui.feed.FeedListView"
+            id="com.tuna.idchk.ui.view.feedList">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="com.tuna.idchk.ui.feedPerspective">
+         <view
+               id="com.tuna.idchk.ui.view.feedList"
+               minimized="false"
+               relationship="left"
+               relative="org.eclipse.ui.editorss"
+               standalone="true">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <menu
+               label="File">
+            <command
+                  commandId="org.eclipse.ui.file.exit"
+                  label="Exit">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="com.tuna.idchk.ui.application"
+            name="ID Checker UI">
+         <property
+               name="appName"
+               value="ID Checker UI">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="com.tuna.idchk.ui.feed.OpenFeedTableEditorHandler"
+            id="com.tuna.idchk.ui.editor.openFeedTable"
+            name="Open Feed Table">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="com.tuna.idchk.ui.feed.FeedTableEditor"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            extensions="xml"
+            icon="icons/sample.gif"
+            id="com.tuna.idchk.ui.editor.feedTable"
+            name="Feed Table Editor">
+      </editor>
+   </extension>
+
+</plugin>

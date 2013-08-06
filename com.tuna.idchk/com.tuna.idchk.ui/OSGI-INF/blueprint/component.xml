@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+	
+	<bean class="com.tuna.idchk.ui.service.ServiceLocator">
+	    <property name="eventAdmin" ref="eventAdmin"/>
+	    <property name="feedList" ref="feedList"/>
+	</bean>
+	
+	<reference id="eventAdmin" interface="org.osgi.service.event.EventAdmin" availability="mandatory"/>
+	
+	<reference-list id="feedList" interface="com.tuna.idchk.feed.api.IFeed">
+	    <reference-listener bind-method="bind" unbind-method="unbind">
+	        <bean class="com.tuna.idchk.ui.service.FeedServiceListener"/>
+	    </reference-listener>
+	</reference-list>
+	
+</blueprint>

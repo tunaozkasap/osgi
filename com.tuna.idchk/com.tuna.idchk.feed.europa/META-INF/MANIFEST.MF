@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ID Checker Europa Feed
+Bundle-SymbolicName: com.tuna.idchk.feed.europa
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: TUNA
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Import-Package: com.tuna.essence.exception.api,
+ com.tuna.idchk.db.api,
+ com.tuna.idchk.feed.api,
+ org.apache.commons.lang,
+ org.apache.commons.lang.time,
+ org.junit;version="4.10.0"

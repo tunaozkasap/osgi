@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+	
+	<bean id="sanctionFeed" class="com.tuna.idchk.feed.sanction.SanctionFeed"/>
+	
+	<service ref="sanctionFeed" activation="eager" auto-export="interfaces"/>
+	
+</blueprint>

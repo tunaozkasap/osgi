@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Flickr UI" id="com.tuna.flickr.ui.product" application="com.tuna.flickr.ui.application" useFeatures="false" includeLaunchers="true">
+<product name="ID Checker UI" id="com.tuna.idchk.ui.product" application="com.tuna.idchk.ui.application" useFeatures="false" includeLaunchers="true">
 
    <configIni use="default">
    </configIni>
 
    <launcherArgs>
-      <programArgs>-console 23 -clean -clearPersistedState</programArgs>
+      <programArgs>-clean -clearPersistedState -console 23</programArgs>
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
    </launcherArgs>
-
-   <windowImages/>
 
    <launcher>
       <solaris/>
@@ -24,13 +22,17 @@
    </vm>
 
    <plugins>
-      <plugin id="com.fasterxml.jackson.core.jackson-annotations"/>
-      <plugin id="com.fasterxml.jackson.core.jackson-core"/>
-      <plugin id="com.fasterxml.jackson.core.jackson-databind"/>
+      <plugin id="ch.qos.logback.classic"/>
+      <plugin id="ch.qos.logback.core"/>
+      <plugin id="ch.qos.logback.slf4j" fragment="true"/>
       <plugin id="com.ibm.icu"/>
       <plugin id="com.tuna.essence.ex"/>
-      <plugin id="com.tuna.flickr.srv"/>
-      <plugin id="com.tuna.flickr.ui"/>
+      <plugin id="com.tuna.idchk.db"/>
+      <plugin id="com.tuna.idchk.feed"/>
+      <plugin id="com.tuna.idchk.feed.europa"/>
+      <plugin id="com.tuna.idchk.feed.sanction"/>
+      <plugin id="com.tuna.idchk.feed.treasury"/>
+      <plugin id="com.tuna.idchk.ui"/>
       <plugin id="javax.annotation"/>
       <plugin id="javax.inject"/>
       <plugin id="javax.xml"/>
@@ -40,12 +42,10 @@
       <plugin id="org.apache.batik.css"/>
       <plugin id="org.apache.batik.util"/>
       <plugin id="org.apache.batik.util.gui"/>
-      <plugin id="org.apache.commons.logging"/>
+      <plugin id="org.apache.commons.lang"/>
       <plugin id="org.apache.felix.gogo.command"/>
       <plugin id="org.apache.felix.gogo.runtime"/>
       <plugin id="org.apache.felix.gogo.shell"/>
-      <plugin id="org.apache.httpcomponents.httpclient"/>
-      <plugin id="org.apache.httpcomponents.httpcore"/>
       <plugin id="org.eclipse.core.commands"/>
       <plugin id="org.eclipse.core.contenttype"/>
       <plugin id="org.eclipse.core.databinding"/>
@@ -93,7 +93,11 @@
       <plugin id="org.eclipse.swt"/>
       <plugin id="org.eclipse.swt.win32.win32.x86_64" fragment="true"/>
       <plugin id="org.eclipse.ui"/>
+      <plugin id="org.eclipse.ui.editors"/>
       <plugin id="org.eclipse.ui.workbench"/>
+      <plugin id="org.hamcrest.core"/>
+      <plugin id="org.hsqldb.hsqldb"/>
+      <plugin id="org.junit"/>
       <plugin id="org.slf4j.api"/>
       <plugin id="org.w3c.css.sac"/>
       <plugin id="org.w3c.dom.smil"/>
@@ -101,12 +105,16 @@
    </plugins>
 
    <configurations>
-      <plugin id="com.tuna.flickr.srv" autoStart="true" startLevel="0" />
-      <plugin id="com.tuna.flickr.ui" autoStart="true" startLevel="0" />
+      <plugin id="com.tuna.idchk.feed.europa" autoStart="true" startLevel="0" />
+      <plugin id="com.tuna.idchk.feed.sanction" autoStart="true" startLevel="0" />
+      <plugin id="com.tuna.idchk.feed.treasury" autoStart="true" startLevel="0" />
+      <plugin id="com.tuna.idchk.ui" autoStart="true" startLevel="0" />
       <plugin id="org.apache.aries.blueprint" autoStart="true" startLevel="0" />
       <plugin id="org.apache.aries.proxy" autoStart="true" startLevel="0" />
       <plugin id="org.apache.aries.util" autoStart="true" startLevel="0" />
-      <plugin id="org.eclipse.osgi.services" autoStart="true" startLevel="0" />
+      <plugin id="org.apache.felix.gogo.command" autoStart="true" startLevel="0" />
+      <plugin id="org.apache.felix.gogo.runtime" autoStart="true" startLevel="0" />
+      <plugin id="org.apache.felix.gogo.shell" autoStart="true" startLevel="0" />
    </configurations>
 
 </product>
